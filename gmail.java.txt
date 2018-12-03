@@ -1,0 +1,28 @@
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Chrome {
+
+	public static void main(String[] args) throws InterruptedException {
+	System.setProperty("webdriver.chrome.driver","C:\\Users\\rtare\\crom\\chromedriver.exe");
+   WebDriver driver= new ChromeDriver(); 
+   driver.get("https://www.google.com");
+   
+   driver.findElement(By.cssSelector("input[title='Search']")).sendKeys("gmail",Keys.ENTER);
+   
+   driver.findElement(By.className("LC20lb")).click();
+   driver.findElement(By.cssSelector(".gmail-nav__nav-link.gmail-nav__nav-link__sign-in")).click();
+     driver.findElement(By.cssSelector("input[type='email']")).sendKeys("mail2shruthi@gmail.com");
+      driver.findElement(By.cssSelector(".RveJvd.snByac")).click();
+     Thread.sleep(2000);
+     driver.findElement(By.cssSelector("input[type='password']")).sendKeys("shutterfly");
+   driver.findElement(By.cssSelector(".RveJvd.snByac")).click();
+  
+    driver.close();
+	}
+	
+
+}
